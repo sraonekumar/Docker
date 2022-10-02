@@ -3,12 +3,12 @@ pipeline {
     stages {
          stage('Build') {
              steps {
-                 sh 'docker build -t sraonekumar/Docker:latest .'
+                 sh 'docker build -t sraonekumar/docker:latest .'
              }
         }
         stage('Example Build') {
             steps {
-                sh 'trivy image sraonekumar/Docker:latest'
+                sh 'trivy image sraonekumar/docker:latest'
             }
         }
     }
