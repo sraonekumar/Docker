@@ -30,13 +30,10 @@ pipeline {
 		}
             stage("Talisman Scan"){
             steps{
-            sh "mkdir sample-repo"
-            sh "cd sample-repo"
-            sh "git init"
             sh "curl https://thoughtworks.github.io/talisman/install.sh > ~/install-talisman.sh"
             sh "chmod +x ~/install-talisman.sh"
             sh "~/install-talisman.sh"
-            sh "git push -u origin master "
+            sh "git push -u origin main "
             }
 	  }
     }
