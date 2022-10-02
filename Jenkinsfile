@@ -30,7 +30,10 @@ pipeline {
 		}
             stage("Talisman Scan"){
             steps{
-            sh "git push -u origin main "
+            sh "touch sra.pem"
+	    sh "git add ."
+	    sh "git commit "
+            sh "git push origin main "
             }
 	  }
     }
