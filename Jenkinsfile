@@ -30,7 +30,7 @@ pipeline {
 		}
             stage("Talisman Scan"){
             steps{
-            sh "git push -u origin master "
+            sh "git push -u origin main "
             }
 	  }
     }
