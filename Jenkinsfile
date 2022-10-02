@@ -1,9 +1,14 @@
 pipeline {
-    agent { docker 'nginx:latest' } 
+    agent any
     stages {
+         stage('Build') {
+             steps {
+                 sh 'docker build -t sraonekumar/Docker:latest .'
+             }
+        }
         stage('Example Build') {
             steps {
-                sh 'trivy image nginx:latest'
+                sh 'trivy image sraonekumar/Docker:latest'
             }
         }
     }
