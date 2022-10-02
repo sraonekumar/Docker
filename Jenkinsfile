@@ -1,9 +1,9 @@
 pipeline {
-    agent { dockerfile true }
+    agent { docker 'nginx:latest' } 
     stages {
-        stage('Test') {
+        stage('Example Build') {
             steps {
-                sh 'docker images'
+                sh 'trivy image nginx:latest'
             }
         }
     }
