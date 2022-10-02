@@ -30,7 +30,6 @@ pipeline {
 		}
             stage("Talisman Scan"){
             steps{
-            sh "git clone git@github.com:sraonekumar/Docker.git"
             sh "curl https://thoughtworks.github.io/talisman/install.sh > ~/install-talisman.sh"
             sh "chmod +x ~/install-talisman.sh"
             sh "~/install-talisman.sh"
