@@ -7,12 +7,12 @@ pipeline {
     stages {
          stage('Build') {
              steps {
-                 sh 'docker build -t sraonekumar/docker:latest .'
+                 sh 'docker build -t msravankumar/srav_private_docker_hub:latest .'
              }
         }
         stage('Trivy Scan for Build') {
             steps {
-                sh 'trivy image sraonekumar/docker:latest'
+                sh 'trivy image msravankumar/srav_private_docker_hub:latest'
             }
         }
 		stage('Login') {
@@ -25,7 +25,7 @@ pipeline {
 		stage('Push') {
 
 			steps {
-				sh 'docker push sraonekumar/docker:latest'
+				sh 'docker push msravankumar/srav_private_docker_hub:latest'
 			}
 		}
     }
