@@ -3,8 +3,8 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'docker build -t sra .'
-                sh 'nginx --version'
+                sh 'node --version'
+                sh 'svn --version'
             }
         }
     }
