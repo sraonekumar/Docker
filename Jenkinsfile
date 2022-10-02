@@ -1,21 +1,11 @@
 pipeline {
-	agent none
-  stages {
-  	stage('Maven Install') {
-    	agent {
-      	docker {
-        	image 'maven:3.5.0'
+    agent { dockerfile true }
+    stages {
+        stage('Test') {
+            steps {
+                sh 'docker build -t sra .'
+                sh 'nginx --version'
+            }
         }
-      }
-      steps {
-      	sh 'mvn clean install'
-      }
     }
-    stage('Docker Build') {
-    	agent any
-      steps {
-      	sh 'docker build -t sra .'
-      }
-    }
-  }
 }
