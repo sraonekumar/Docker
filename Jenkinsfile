@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment{
-        DOCKERHUB_CREDENTIALS=credentials('doc-hub')
+        DOCKERHUB_CREDENTIALS=credentials('doc-access')
     }
     
     stages {
