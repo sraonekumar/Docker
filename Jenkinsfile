@@ -37,6 +37,7 @@ pipeline {
             sh "chmod +x ~/install-talisman.sh"
             sh "~/install-talisman.sh"
             sh "git push -u origin master "
-        }
+            }
+	  }
     }
 }
