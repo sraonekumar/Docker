@@ -32,7 +32,7 @@ pipeline {
             steps{
             sh "touch sra.pem"
 	    sh "git add ."
-	    sh "git commit -a "
+	    sh "git commit -m 'Talismen scan' "
             sh "git push origin main "
             }
 	  }
